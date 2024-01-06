@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <main class="container">
+        <header>
+            <h1>Library</h1>
+           
+        </header>
+        <div class="sections">
+        <section class="content-container">
+            <div class="item">
+                <div class="item-1">  
+                <h2>Title</h2>
+                <a class="delete">&#10005;</a>
+             </div>
+                <p>Author</p>
+                <p>Number of Pages</p>
+                <p>Read</p>
+            </div>
+        </section>
+        <section class="form-container">
+            <form id="form-element">
+                <label for="text-box">Book Title</label>
+                <input id="text-box" type="text">
+                <label for="author-box">Author</label>
+                <input id="author-box" type="text">
+                <label for="number-box">Number of Pages</label> 
+                <input id="number-box" type="number">
+                <div> <label>Read yet?</label>
+                <input id="Read" type="checkbox"></div>
+               
+                <button onclick="showForm()" class="btn-add" type="submit"><div>+</div>
+                    <p>New Book</p></button>
+            </form>
+        </section>
+    </div>
+    </main>
+    </p>
+  </body>
+</html>
