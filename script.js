@@ -88,10 +88,11 @@
 
 // console.log(hero2.attack(), hero3.heal());
 
+// My form container
 const formContainer = document.getElementById("form-element");
-
+//My array that loops new books
 const myLibrary = [];
-
+//Constructor(kurucu) function
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -101,30 +102,35 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(title, author, pages, read) {
   const newBook = new Book(title, author, pages, read);
+  //newBook nesne fonksiyonuyla özellikleri ana arrayimize pushluyoruz
   myLibrary.push(newBook);
 }
-
+console.log(myLibrary);
 function displayBooks() {
+  //Selecting new books container
   const libraryContainer = document.querySelector(".content-container");
   libraryContainer.innerHTML = "";
 
+  //We implementing
   myLibrary.forEach((book, index) => {
+    //Div elemnti oluşturuyoruz ve item clasını veriyoruz
     const bookDiv = document.createElement("div");
     bookDiv.className = "item";
-
+    //html şablonumuzu oluşturuoyuruz
     const htmlContent = `
         <div class="item-1">
           <h2>${book.title}</h2>
-          <a class="delete">&#10005;</a>
+          <a onclick="removeBook(${index})" class="delete">&#10005;</a>
         </div>
         <p>${book.author}</p>
         <p>${book.pages}</p>
         <p>${book.read ? "Yes" : "No"}</p>
-        <button onclick="removeBook(${index})">Remove</button>
-        <button onclick="toggleReadStatus(${index})">Toggle Read Status</button>
+       
+        <button onclick="toggleReadStatus(${index})">Change Read Status</button>
       `;
-
+    //bookDiv adlı oluşturduğumuz divin içine şablonumuzu yazdırıyoruz
     bookDiv.innerHTML = htmlContent;
+    //oluştuduğumuz divi books containerın içine ekliyoruz
     libraryContainer.appendChild(bookDiv);
   });
 }
